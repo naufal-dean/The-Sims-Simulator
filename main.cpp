@@ -1,5 +1,4 @@
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
 #include "sims.h"
 
 using namespace std;
@@ -8,8 +7,15 @@ void menu();
 void start();
 void doAct(Sims * s);
 
+const int NMax = 4;
+string s[NMax] = {"Bersiaplah untuk bermain!", "Rasakan permainan yang menyenangkan!",
+ "Simulasikan kehidupanmu!", "Coba sekali bermain susah berhentinya!"};
+
 int main() {
-    cout << "Welcome to The Simz 10\n\n";
+    cout << "Welcome to The Simz 10\n";
+    srand(time(0));
+    cout << s[rand() % 4] << "\n\n";
+
     menu();
     return 0;
 }
@@ -48,6 +54,7 @@ void menu() {
     int op;
 
     cout << menuText;
+    cout << "Masukkan nomor pilihan : ";
     cin >> op;
     switch (op) {
       case 1:
@@ -56,6 +63,13 @@ void menu() {
           break;
       case 2:
           // TODO: read file?? save state by saving menu sequence
+          cout << "Under construction...";
+          /*
+          ofstream file;
+          file.open("<namafile>");
+          file << "writing to the file";
+          file.close();
+          */
           break;
       case 3:
           cout  << "The Simz 10\n\n"
@@ -81,7 +95,7 @@ void start() {
     cin >> name;
     Sims player(name);
 
-    cout << "Selamat pagi, " << name << "! Pagi yang indah...\n";
+    cout << "\nSelamat pagi, " << name << "! Pagi yang indah...\n";
     while (!gameOver) {
         cout << "\n";
         doAct(&player);
@@ -93,16 +107,19 @@ void start() {
             cout << "Yahh, kamu kalah...\n\n";
         }
     }
+
 }
 
 void doAct(Sims * s) {
     int act, subAct;
 
-    cout << "Apa yang ingin kau lakukan??\n" << actText;
+    cout << "Apa yang ingin kau lakukan??\n\n" << actText;
+    cout << "\nMasukkan nomor pilihan yang ingin anda lakukan : ";
     cin >> act;
     switch (act) {
         case 1:
             cout << subTidur;
+            cout << "\nMasukkan nomor pilihan tidur yang ingin anda lakukan : ";
             cin >> subAct;
             switch (subAct) {
                 case 1:
@@ -115,6 +132,7 @@ void doAct(Sims * s) {
             break;
         case 2:
             cout << subMakan;
+            cout << "\nMasukkan nomor pilihan makanan yang ingin anda makan : ";
             cin >> subAct;
             switch (subAct) {
                 case 1:
@@ -130,6 +148,7 @@ void doAct(Sims * s) {
             break;
         case 3:
             cout << subMinum;
+            cout << "\nMasukkan nomor pilihan minuman yang ingin anda minum : ";
             cin >> subAct;
             switch (subAct) {
                 case 1:
@@ -145,6 +164,7 @@ void doAct(Sims * s) {
             break;
         case 4:
             cout << subBuangAir;
+            cout << "\nMasukkan nomor pilihan buang air yang ingin anda lakukan : ";
             cin >> subAct;
             switch (subAct) {
                 case 1:
@@ -176,6 +196,7 @@ void doAct(Sims * s) {
         case 11:
             cout << subBaca;
             cin >> subAct;
+            cout << "\nMasukkan nomor pilihan bacaan yang ingin anda baca : ";
             switch (subAct) {
                 case 1:
                     (*s).doMembaca(BACA_KORAN);
