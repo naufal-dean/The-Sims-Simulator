@@ -13,7 +13,14 @@ private:
     int hygiene, energy, fun;
 
 public:
-    Sims (string name);
+    //** Constructor **//
+    Sims (string playerName);
+    //** Selector **//
+    string getName();
+    int getHygiene();
+    int getEnergy();
+    int getFun();
+    //** Sims function **//
     bool changeStatus(int h, int e, int f);
     void doTidur(int option);
     void doMakan(int option);
@@ -26,6 +33,10 @@ public:
     void doCuciTangan();
     void doMendengarMusik();
     void doMembaca(int option);
+    bool isWin();
+    bool isLose();
+    //** Utility **//
+    void printStatus();
 };
 
 #endif // SIMS_H
