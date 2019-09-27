@@ -14,12 +14,13 @@ private:
 
 public:
     //** Constructor **//
-    Sims (string playerName);
+    Sims();
     //** Selector **//
     string getName();
     int getHygiene();
     int getEnergy();
     int getFun();
+    void setName(string playerName);
     //** Sims function **//
     bool changeStatus(int h, int e, int f);
     void doTidur(int option);

@@ -1,7 +1,6 @@
 #include "sims.h"
 
-Sims::Sims (string playerName) {
-    name = playerName;
+Sims::Sims() {
     hygiene = 0;
     energy = 10;
     fun = 0;
@@ -21,6 +20,10 @@ int Sims::getEnergy() {
 
 int Sims::getFun() {
     return(fun);
+}
+
+void Sims::setName(string playerName) {
+    name = playerName;
 }
 
 bool Sims::changeStatus(int h, int e, int f) {
