@@ -36,8 +36,8 @@ private:
                             "2. Kopi\n"
                             "3. Jus\n";
     const string subBuangAir = "Buang air:\n"
-                            "1. Besar\n"
-                            "2. Kecil\n";
+                            "1. Kecil\n"
+                            "2. Besar\n";
     const string subBaca =  "Jenis bacaan:\n"
                             "1. Koran\n"
                             "2. Novel\n";
@@ -48,6 +48,8 @@ private:
     void about();
     void welcomeBanner();
     void newGameBanner();
+    void gameWinBanner();
+    void gameLoseBanner();
     void aboutBanner();
     //** Sims Function **//
     void statusBar(Sims s);
@@ -56,6 +58,7 @@ private:
     void printCenter(string s);
     void printWrap(string s);
     void openBanner(string filepath);
+    void validateCinInt(string text, int * var);
 
 public:
     void exec();

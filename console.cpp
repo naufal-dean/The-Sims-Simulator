@@ -12,8 +12,7 @@ void Console::menu() {
         system("cls");
         welcomeBanner();
         cout << menuText;
-        cout << "Masukkan nomor pilihan : ";
-        cin >> op;
+        validateCinInt("Masukkan nomor pilihan menu: ", &op);
         switch (op) {
           case 1:
               start();
@@ -60,8 +59,8 @@ void Console::start() {
     player.setName(name); cout << endl;
 
     printWrap("Selamat pagi, " + player.getName() + "! Pagi yang indah..."); cout << endl;
-    printWrap("Kau adalah seorang mahasiswa biasa yang bercita-cita menjadi seseorang yang luar biasa");
-    printWrap("Oleh karena itu, sekarang kau tinggal di kota Kwek yang jauh dari kampung halamanmu");
+    printWrap("Kau adalah seorang mahasiswa biasa yang bercita-cita menjadi seseorang yang luar biasa.");
+    printWrap("Oleh karena itu, sekarang kau tinggal di kota Shoors yang jauh dari kampung halamanmu untuk menuntut ilmu di IT*.");
     printWrap("Apakah kau siap membuat dinastimu sendiri??"); cout << endl;
     system("pause");
 
@@ -71,11 +70,15 @@ void Console::start() {
         doAct(&player); cout << endl;
         system("pause");
         if (player.isWin()) {
+            system("cls");
             gameOver = true;
-            cout << "Yeayy, kamu memenangkan game ini!\n\n";
+            gameWinBanner();
+            system("pause");
         } else if (player.isLose()) {
+            system("cls");
             gameOver = true;
-            cout << "Yahh, kamu kalah...\n\n";
+            gameLoseBanner();
+            system("pause");
         }
     }
 }
@@ -101,13 +104,23 @@ void Console::newGameBanner() {
     openBanner("data/newGameBanner.txt");
 }
 
+void Console::gameWinBanner() {
+    openBanner("data/gameWinBanner.txt");
+}
+
+void Console::gameLoseBanner() {
+    openBanner("data/gameLoseBanner.txt");
+}
+
 void Console::aboutBanner() {
     openBanner("data/aboutBanner.txt");
 }
 
 void Console::statusBar(Sims s) {
+    string name = (s.getName().length() > 37) ? (s.getName().substr(0, 34) + "...") : (s.getName());
+
     cout << "|===================================================================|" << endl;
-    cout << "|  " << s.getName() << setfill(' ') << setw(39 - s.getName().length()) << "  ";
+    cout << "|  " << name << setfill(' ') << setw(39 - s.getName().length()) << "  ";
     cout << "Hyg: " << setfill('0') << setw(2) << s.getHygiene() << "  ";
     cout << "En: " << setfill('0') << setw(2) << s.getEnergy() << "  ";
     cout << "Fun: " << setfill('0') << setw(2) << s.getFun() << "  |" << endl;
@@ -117,14 +130,12 @@ void Console::statusBar(Sims s) {
 void Console::doAct(Sims * s) {
     int act, subAct;
 
-    cout << "Apa yang ingin kau lakukan??\n" << actText;
-    cout << "\nMasukkan nomor pilihan yang ingin anda lakukan : ";
-    cin >> act;
+    cout << "Apa yang ingin kau lakukan??\n" << actText << endl;
+    validateCinInt("Masukkan nomor pilihan yang ingin anda lakukan: ", &act);
     switch (act) {
         case 1:
-            cout << subTidur;
-            cout << "\nMasukkan nomor pilihan tidur yang ingin anda lakukan : ";
-            cin >> subAct;
+            cout << subTidur << endl;
+            validateCinInt("Masukkan nomor pilihan tidur yang ingin anda lakukan: ", &subAct);
             switch (subAct) {
                 case 1:
                     (*s).doTidur(TIDUR_SIANG);
@@ -138,9 +149,8 @@ void Console::doAct(Sims * s) {
             }
             break;
         case 2:
-            cout << subMakan;
-            cout << "\nMasukkan nomor pilihan makanan yang ingin anda makan : ";
-            cin >> subAct;
+            cout << subMakan << endl;
+            validateCinInt("Masukkan nomor pilihan makanan yang ingin anda makan: ", &subAct);
             switch (subAct) {
                 case 1:
                     (*s).doMakan(MAKAN_HAMBURGER);
@@ -157,9 +167,8 @@ void Console::doAct(Sims * s) {
             }
             break;
         case 3:
-            cout << subMinum;
-            cout << "\nMasukkan nomor pilihan minuman yang ingin anda minum : ";
-            cin >> subAct;
+            cout << subMinum << endl;
+            validateCinInt("Masukkan nomor pilihan minuman yang ingin anda minum: ", &subAct);
             switch (subAct) {
                 case 1:
                     (*s).doMinum(MINUM_AIR);
@@ -176,9 +185,8 @@ void Console::doAct(Sims * s) {
             }
             break;
         case 4:
-            cout << subBuangAir;
-            cout << "\nMasukkan nomor pilihan buang air yang ingin anda lakukan : ";
-            cin >> subAct;
+            cout << subBuangAir << endl;
+            validateCinInt("Masukkan nomor pilihan buang air yang ingin anda lakukan: ", &subAct);
             switch (subAct) {
                 case 1:
                     (*s).doBuangAir(BUANG_AIR_KECIL);
@@ -210,9 +218,8 @@ void Console::doAct(Sims * s) {
             (*s).doMendengarMusik();
             break;
         case 11:
-            cout << subBaca;
-            cout << "\nMasukkan nomor pilihan bacaan yang ingin anda baca : ";
-            cin >> subAct;
+            cout << subBaca << endl;
+            validateCinInt("Masukkan nomor pilihan bacaan yang ingin anda baca: ", &subAct);
             switch (subAct) {
                 case 1:
                     (*s).doMembaca(BACA_KORAN);
@@ -224,6 +231,9 @@ void Console::doAct(Sims * s) {
                     cout << "Opsi tidak valid!" << endl;
                     break;
             }
+            break;
+        default:
+            cout << "Opsi tidak valid!" << endl;
             break;
     }
 }
@@ -260,4 +270,16 @@ void Console::openBanner(string filepath) {
     cout << "#####################################################################" << endl << endl;
 
     f.close();
+}
+
+void Console::validateCinInt(string text, int * var) {
+    cout << text;
+    cin >> (*var);
+    while (!cin) {
+        cout << "Hanya menerima input integer!" << endl;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << text;
+        cin >> (*var);
+    }
 }
