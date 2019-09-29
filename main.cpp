@@ -1,4 +1,3 @@
-#include <bits/stdc++.h>
 #include "console.h"
 
 using namespace std;

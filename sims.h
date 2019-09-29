@@ -1,8 +1,7 @@
 #ifndef SIMS_H
 #define SIMS_H
 
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
 #include "constants.h"
 
 using namespace std;

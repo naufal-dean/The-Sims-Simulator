@@ -8,6 +8,7 @@ using namespace std;
 
 class Console {
 private:
+    //** Constants **//
     const static int NMax = 4;
     const string welcome[NMax] = {"Bersiaplah untuk bermain!", "Rasakan permainan yang menyenangkan!",
                                 "Simulasikan kehidupanmu!", "Coba sekali bermain susah berhentinya!"};
@@ -40,12 +41,24 @@ private:
     const string subBaca =  "Jenis bacaan:\n"
                             "1. Koran\n"
                             "2. Novel\n";
-public:
-    void exec();
+
+    //** Interface Function **//
     void menu();
     void start();
+    void about();
+    void welcomeBanner();
+    void newGameBanner();
+    void aboutBanner();
+    //** Sims Function **//
     void statusBar(Sims s);
     void doAct(Sims * s);
+    //** Utility **//
+    void printCenter(string s);
+    void printWrap(string s);
+    void openBanner(string filepath);
+
+public:
+    void exec();
 };
 
 #endif // CONSOLE_H

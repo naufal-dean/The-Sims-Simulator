@@ -44,195 +44,218 @@ bool Sims::changeStatus(int h, int e, int f) {
 }
 
 void Sims::doTidur(int option) {
-    bool actStatus;
+    bool actStatus = false;
+    string subAct;
 
     switch (option) {
-      case TIDUR_SIANG:
-          actStatus = changeStatus(0, 10, 0);
-          break;
-      case TIDUR_MALAM:
-          actStatus = changeStatus(0, 15, 0);
-          break;
-      default:
-          cout << "Opsi tidak valid!" << '\n';
-          break;
+        case TIDUR_SIANG:
+            actStatus = changeStatus(0, 10, 0);
+            subAct = "siang";
+            break;
+        case TIDUR_MALAM:
+            actStatus = changeStatus(0, 15, 0);
+            subAct = "malam";
+            break;
+        default:
+            cout << "Opsi tidak valid!" << endl;
+            break;
     }
 
     if (actStatus) {
-        cout << "Tidur berhasil!" << "\n";
+        cout << "Tidur " + subAct + " berhasil!" << endl;
         printStatus();
     } else {
-        cout << "Tidur gagal!" << "\n";
+        cout << "Tidur " + subAct + " gagal!" << endl;
     }
 }
 
 void Sims::doMakan(int option) {
-    bool actStatus;
+    bool actStatus = false;
+    string subAct;
 
     switch (option) {
-      case MAKAN_HAMBURGER:
-          actStatus = changeStatus(0, 5, 0);
-          break;
-      case MAKAN_PIZZA:
-          actStatus = changeStatus(0, 10, 0);
-          break;
-      case MAKAN_STEAK_AND_BEANS:
-          actStatus = changeStatus(0, 15, 0);
-          break;
-      default:
-          cout << "Opsi tidak valid!" << '\n';
-          break;
+        case MAKAN_HAMBURGER:
+            actStatus = changeStatus(0, 5, 0);
+            subAct = "hamburger";
+            break;
+        case MAKAN_PIZZA:
+            actStatus = changeStatus(0, 10, 0);
+            subAct = "pizza";
+            break;
+        case MAKAN_STEAK_AND_BEANS:
+            actStatus = changeStatus(0, 15, 0);
+            subAct = "steak and beans";
+            break;
+        default:
+            cout << "Opsi tidak valid!" << endl;
+            break;
     }
 
     if (actStatus) {
-        cout << "Makan berhasil!" << "\n";
+        cout << "Makan " + subAct + " berhasil!" << endl;
         printStatus();
     } else {
-        cout << "Makan gagal!" << "\n";
+        cout << "Makan " + subAct + " gagal!" << endl;
     }
 }
 
 void Sims::doMinum(int option) {
-    bool actStatus;
+    bool actStatus = false;
+    string subAct;
 
     switch (option) {
-      case MINUM_AIR:
-          actStatus = changeStatus(-5, 0, 0);
-          break;
-      case MINUM_KOPI:
-          actStatus = changeStatus(-10, 5, 0);
-          break;
-      case MINUM_JUS:
-          actStatus = changeStatus(-5, 10, 0);
-          break;
-      default:
-          cout << "Opsi tidak valid!" << '\n';
-          break;
+        case MINUM_AIR:
+            actStatus = changeStatus(-5, 0, 0);
+            subAct = "air";
+            break;
+        case MINUM_KOPI:
+            actStatus = changeStatus(-10, 5, 0);
+            subAct = "kopi";
+            break;
+        case MINUM_JUS:
+            actStatus = changeStatus(-5, 10, 0);
+            subAct = "jus";
+            break;
+        default:
+            cout << "Opsi tidak valid!" << endl;
+            break;
     }
 
     if (actStatus) {
-        cout << "Minum berhasil!" << "\n";
+        cout << "Minum " + subAct + " berhasil!" << endl;
         printStatus();
     } else {
-        cout << "Minum gagal!" << "\n";
+        cout << "Minum " + subAct + " gagal!" << endl;
     }
 }
 
 void Sims::doBuangAir(int option) {
-    bool actStatus;
+    bool actStatus = false;
+    string subAct;
 
     switch (option) {
-      case BUANG_AIR_KECIL:
-          actStatus = changeStatus(5, 0, 0);
-          break;
-      case BUANG_AIR_BESAR:
-          actStatus = changeStatus(10, -5, 0);
-          break;
-      default:
-          cout << "Opsi tidak valid!" << '\n';
-          break;
+        case BUANG_AIR_KECIL:
+            actStatus = changeStatus(5, 0, 0);
+            subAct = "kecil";
+            break;
+        case BUANG_AIR_BESAR:
+            actStatus = changeStatus(10, -5, 0);
+            subAct = "besar";
+            break;
+        default:
+            cout << "Opsi tidak valid!" << endl;
+            break;
     }
 
     if (actStatus) {
-        cout << "Buang air berhasil!" << "\n";
+        cout << "Buang air " + subAct + " berhasil!" << endl;
         printStatus();
     } else {
-        cout << "Buang air gagal!" << "\n";
+        cout << "Buang air " + subAct + " gagal!" << endl;
     }
 }
 
 void Sims::doSosialisasiKeKafe() {
-    bool actStatus;
+    bool actStatus = false;
+    string subAct;
 
     actStatus = changeStatus(-5, -10, 15);
     if (actStatus) {
-        cout << "Sosialisasi berhasil!" << "\n";
+        cout << "Sosialisasi berhasil!" << endl;
         printStatus();
     } else {
-        cout << "Sosialisasi gagal!" << "\n";
+        cout << "Sosialisasi gagal!" << endl;
     }
 }
 
 void Sims::doBermainMedsos() {
-    bool actStatus;
+    bool actStatus = false;
+    string subAct;
 
     actStatus = changeStatus(0, -10, 10);
     if (actStatus) {
-        cout << "Bermain medsos berhasil!" << "\n";
+        cout << "Bermain medsos berhasil!" << endl;
         printStatus();
     } else {
-        cout << "Bermain medsos gagal!" << "\n";
+        cout << "Bermain medsos gagal!" << endl;
     }
 }
 
 void Sims::doBermainKomputer() {
-    bool actStatus;
+    bool actStatus = false;
+    string subAct;
 
     actStatus = changeStatus(0, -10, 15);
     if (actStatus) {
-        cout << "Bermain komputer berhasil!" << "\n";
+        cout << "Bermain komputer berhasil!" << endl;
         printStatus();
     } else {
-        cout << "Bermain komputer gagal!" << "\n";
+        cout << "Bermain komputer gagal!" << endl;
     }
 }
 
 void Sims::doMandi() {
-    bool actStatus;
+    bool actStatus = false;
+    string subAct;
 
     actStatus = changeStatus(15, -5, 0);
     if (actStatus) {
-        cout << "Mandi berhasil!" << "\n";
+        cout << "Mandi berhasil!" << endl;
         printStatus();
     } else {
-        cout << "Mandi gagal!" << "\n";
+        cout << "Mandi gagal!" << endl;
     }
 }
 
 void Sims::doCuciTangan() {
-    bool actStatus;
+    bool actStatus = false;
+    string subAct;
 
     actStatus = changeStatus(5, 0, 0);
     if (actStatus) {
-        cout << "Cuci tangan berhasil!" << "\n";
+        cout << "Cuci tangan berhasil!" << endl;
         printStatus();
     } else {
-        cout << "Cuci tangan gagal!" << "\n";
+        cout << "Cuci tangan gagal!" << endl;
     }
 }
 
 void Sims::doMendengarMusik() {
-    bool actStatus;
+    bool actStatus = false;
+    string subAct;
 
     actStatus = changeStatus(0, -5, 10);
     if (actStatus) {
-        cout << "Mendengar musik berhasil!" << "\n";
+        cout << "Mendengar musik berhasil!" << endl;
         printStatus();
     } else {
-        cout << "Mendengar musik gagal!" << "\n";
+        cout << "Mendengar musik gagal!" << endl;
     }
 }
 
 void Sims::doMembaca(int option) {
-    bool actStatus;
+    bool actStatus = false;
+    string subAct;
 
     switch (option) {
-      case BACA_KORAN:
-          actStatus = changeStatus(0, -5, 5);
-          break;
-      case BACA_NOVEL:
-          actStatus = changeStatus(0, -5, 10);
-          break;
-      default:
-          cout << "Opsi tidak valid!" << '\n';
-          break;
+        case BACA_KORAN:
+            actStatus = changeStatus(0, -5, 5);
+            subAct = "koran";
+            break;
+        case BACA_NOVEL:
+            actStatus = changeStatus(0, -5, 10);
+            subAct = "novel";
+            break;
+        default:
+            cout << "Opsi tidak valid!" << endl;
+            break;
     }
 
     if (actStatus) {
-        cout << "Membaca berhasil!" << "\n";
+        cout << "Membaca " + subAct + " berhasil!" << endl;
         printStatus();
     } else {
-        cout << "Membaca gagal!" << "\n";
+        cout << "Membaca " + subAct + " gagal!" << endl;
     }
 }
 
@@ -245,7 +268,7 @@ bool Sims::isLose() {
 }
 
 void Sims::printStatus() {
-    cout << "Hygiene  : " << hygiene << "\n";
-    cout << "Energy   : " << energy << "\n";
-    cout << "Fun      : " << fun << "\n";
+    cout << "Hygiene  : " << hygiene << endl;
+    cout << "Energy   : " << energy << endl;
+    cout << "Fun      : " << fun << endl;
 }
