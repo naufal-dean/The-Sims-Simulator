@@ -1,16 +1,17 @@
 #ifndef CONSOLE_H
 #define CONSOLE_H
 
-#include <iostream>
-#include <iomanip>
-#include <string>
+#include <bits/stdc++.h>
 #include "sims.h"
 
 using namespace std;
 
 class Console {
 private:
-    const string menuText = "Select Menu\n"
+    const static int NMax = 4;
+    const string welcome[NMax] = {"Bersiaplah untuk bermain!", "Rasakan permainan yang menyenangkan!",
+                                "Simulasikan kehidupanmu!", "Coba sekali bermain susah berhentinya!"};
+    const string menuText = "Menu\n"
                             "1. New Game\n"
                             "2. Load Game\n"
                             "3. About\n"
