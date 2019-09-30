@@ -65,6 +65,7 @@ void Sims::doTidur(int option) {
         cout << "Tidur " + subAct + " berhasil!" << endl;
         printStatus();
     } else {
+        cout << "Aksi tidak valid." << endl;
         cout << "Tidur " + subAct + " gagal!" << endl;
     }
 }
@@ -95,6 +96,7 @@ void Sims::doMakan(int option) {
         cout << "Makan " + subAct + " berhasil!" << endl;
         printStatus();
     } else {
+        cout << "Aksi tidak valid." << endl;
         cout << "Makan " + subAct + " gagal!" << endl;
     }
 }
@@ -125,6 +127,7 @@ void Sims::doMinum(int option) {
         cout << "Minum " + subAct + " berhasil!" << endl;
         printStatus();
     } else {
+        cout << "Aksi tidak valid." << endl;
         cout << "Minum " + subAct + " gagal!" << endl;
     }
 }
@@ -151,6 +154,7 @@ void Sims::doBuangAir(int option) {
         cout << "Buang air " + subAct + " berhasil!" << endl;
         printStatus();
     } else {
+        cout << "Aksi tidak valid." << endl;
         cout << "Buang air " + subAct + " gagal!" << endl;
     }
 }
@@ -161,10 +165,11 @@ void Sims::doSosialisasiKeKafe() {
 
     actStatus = changeStatus(-5, -10, 15);
     if (actStatus) {
-        cout << "Sosialisasi berhasil!" << endl;
+        cout << "Bersosialisasi ke kafe berhasil!" << endl;
         printStatus();
     } else {
-        cout << "Sosialisasi gagal!" << endl;
+        cout << "Aksi tidak valid." << endl;
+        cout << "Bersosialisasi ke kafe gagal!" << endl;
     }
 }
 
@@ -177,6 +182,7 @@ void Sims::doBermainMedsos() {
         cout << "Bermain medsos berhasil!" << endl;
         printStatus();
     } else {
+        cout << "Aksi tidak valid." << endl;
         cout << "Bermain medsos gagal!" << endl;
     }
 }
@@ -190,6 +196,7 @@ void Sims::doBermainKomputer() {
         cout << "Bermain komputer berhasil!" << endl;
         printStatus();
     } else {
+        cout << "Aksi tidak valid." << endl;
         cout << "Bermain komputer gagal!" << endl;
     }
 }
@@ -203,6 +210,7 @@ void Sims::doMandi() {
         cout << "Mandi berhasil!" << endl;
         printStatus();
     } else {
+        cout << "Aksi tidak valid." << endl;
         cout << "Mandi gagal!" << endl;
     }
 }
@@ -216,6 +224,7 @@ void Sims::doCuciTangan() {
         cout << "Cuci tangan berhasil!" << endl;
         printStatus();
     } else {
+        cout << "Aksi tidak valid." << endl;
         cout << "Cuci tangan gagal!" << endl;
     }
 }
@@ -226,10 +235,11 @@ void Sims::doMendengarMusik() {
 
     actStatus = changeStatus(0, -5, 10);
     if (actStatus) {
-        cout << "Mendengar musik berhasil!" << endl;
+        cout << "Mendengarkan musik di radio berhasil!" << endl;
         printStatus();
     } else {
-        cout << "Mendengar musik gagal!" << endl;
+        cout << "Aksi tidak valid." << endl;
+        cout << "Mendengarkan musik di radio gagal!" << endl;
     }
 }
 
@@ -255,6 +265,7 @@ void Sims::doMembaca(int option) {
         cout << "Membaca " + subAct + " berhasil!" << endl;
         printStatus();
     } else {
+        cout << "Aksi tidak valid." << endl;
         cout << "Membaca " + subAct + " gagal!" << endl;
     }
 }
