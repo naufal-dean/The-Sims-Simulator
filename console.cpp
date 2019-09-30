@@ -18,21 +18,10 @@ void Console::menu() {
               start();
               break;
           case 2:
-              // TODO: read file?? save state by saving menu sequence
-              cout << "Under construction...\n\n";
-              /*
-              ofstream file;
-              file.open("<namafile>");
-              file << "writing to the file";
-              file.close();
-              */
-              system("pause");
-              break;
-          case 3:
               about();
               system("pause");
               break;
-          case 4:
+          case 3:
               cout << endl;
               cout << "Terima kasih telah bermain..." << endl;
               cout << "Kau berhasil kembali ke dunia nyata..." << endl;
@@ -73,11 +62,15 @@ void Console::start() {
             system("cls");
             gameOver = true;
             gameWinBanner();
+            printWrap("Yeayy, kamu berhasil menjalani kehidupan (palsu) dengan sangat baik. Tapi jangan lupa kehidupan yang asli juga broo...");
+            printWrap("Terima kasih telah bermain..."); cout << endl;
             system("pause");
         } else if (player.isLose()) {
             system("cls");
             gameOver = true;
             gameLoseBanner();
+            printWrap("Waduh kamu kalah... Berarti kamu emang gak boleh main game dah kayaknya, kecuali game ini sih...");
+            printWrap("Coba lagi lah kuyy..."); cout << endl;
             system("pause");
         }
     }
@@ -87,7 +80,7 @@ void Console::about() {
     system("cls");
     aboutBanner();
 
-    printCenter("The Simz 10"); cout << endl;
+    printCenter("The Sims 10"); cout << endl;
     printCenter("Created by GreeksForGreeks");
     printCenter("Copyright 2019"); cout << endl;
 }
@@ -95,7 +88,7 @@ void Console::about() {
 void Console::welcomeBanner() {
     openBanner("data/welcomeBanner.txt");
 
-    printCenter("Welcome to The Simz 10");
+    printCenter("Welcome to The Sims 10");
     srand(time(0));
     printCenter(welcome[rand() % 4]); cout << endl;
 }

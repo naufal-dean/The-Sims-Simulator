@@ -14,9 +14,8 @@ private:
                                 "Simulasikan kehidupanmu!", "Coba sekali bermain susah berhentinya!"};
     const string menuText = "Menu\n"
                             "1. New Game\n"
-                            "2. Load Game\n"
-                            "3. About\n"
-                            "4. Exit\n";
+                            "2. About\n"
+                            "3. Exit\n";
     const string actText =  "Menu aksi:\n"
                             "1. Tidur           7. Bermain Komputer\n"
                             "2. Makan           8. Mandi\n"
