@@ -1,15 +1,12 @@
-The Sims Simulator
+# TUGAS BESAR IF2110 - TEORI BAHASA FORMAL DAN OTOMATA 2019
 
-Dibuat oleh:
-Muhammad Hasan 13518012
-Naufal Dean Anugrah 13518123
+## The Sims Simulator
 
-Kelompok:
-GreeksForGreeks
+Kelompok 4 / GreeksForGreeks / K03 :
+1. Muhammad Hasan       13518012
+2. Naufal Dean Anugrah  13518123
 
-Kelas: 3
-
-## Cara menjalankan program ##
+## Cara menjalankan program
 > Bisa dilakukan dengan menjalankan file run.bat di cmd.
 > Atau secara manual bisa dilakukan dengan command `g++ -o sims *.cpp` untuk kompilasi
   dan `sims` atau `./sims` tergantung menggunakan cmd atau terminal untuk menjalankan program.
